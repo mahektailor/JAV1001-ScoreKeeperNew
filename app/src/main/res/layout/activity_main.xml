@@ -2,118 +2,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/teamAScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/team_a_0_0"
-        android:textSize="24sp"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp" />
+    <!-- TextView to display Team A score -->
 
-    <Button
-        android:id="@+id/teamASixButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_6_runs"
-        android:layout_below="@id/teamAScore"
-        android:layout_marginTop="8dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp" />
+    <!-- TextView to display Team B score -->
 
-    <Button
-        android:id="@+id/teamAFourButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_4_runs"
-        android:layout_below="@id/teamASixButton"
-        android:layout_marginTop="8dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp" />
+    <!-- TextView to display overs -->
+
+    <!-- Button to increment Team A score by 6 -->
+
+    <!-- Button to increment Team A score by 4 -->
+
+    <!-- Button to increment Team A score by 1 -->
 
     <Button
         android:id="@+id/teamARunButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_1_run"
-        android:layout_below="@id/teamAFourButton"
-        android:layout_marginTop="8dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp" />
+        android:layout_below="@id/teamASixButton"
+        android:layout_marginTop="16dp"
+        android:text="Team A +1" />
 
     <Button
         android:id="@+id/teamAWicketButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/wicket"
-        android:layout_below="@id/teamARunButton"
-        android:layout_marginTop="8dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp" />
+        android:layout_below="@id/teamASixButton"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/teamARunButton"
+        android:text="Team A Wicket" />
+
+    <Button
+        android:id="@+id/teamAFourButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/oversTextView"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="117dp"
+        android:layout_toEndOf="@id/teamASixButton"
+        android:text="Team A +4" />
+
+    <Button
+        android:id="@+id/teamASixButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/oversTextView"
+        android:layout_marginTop="117dp"
+        android:text="Team A +6" />
 
     <TextView
         android:id="@+id/teamBScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/team_b_0_0"
-        android:textSize="24sp"
+        android:layout_below="@id/teamAScore"
         android:layout_marginTop="16dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp" />
+        android:text="Team B: 0"
+        android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/teamBSixButton"
+    <TextView
+        android:id="@+id/teamAScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="6 Runs"
-        android:layout_below="@id/teamBScore"
-        android:layout_marginTop="8dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp" />
-
-    <Button
-        android:id="@+id/teamBFourButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="4 Runs"
-        android:layout_below="@id/teamBSixButton"
-        android:layout_marginTop="8dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp" />
-
-    <Button
-        android:id="@+id/teamBRunButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1 Run"
-        android:layout_below="@id/teamBFourButton"
-        android:layout_marginTop="8dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp" />
-
-    <Button
-        android:id="@+id/teamBWicketButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wicket"
-        android:layout_below="@id/teamBRunButton"
-        android:layout_marginTop="8dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp" />
+        android:text="Team A: 0"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/oversTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/overs_0"
-        android:textSize="20sp"
-        android:layout_below="@id/teamAWicketButton"
+        android:layout_below="@id/teamBScore"
+        android:layout_marginTop="19dp"
+        android:text="Overs: 0"
+        android:textSize="18sp" />
+
+    <!-- Button to increment Team A wickets -->
+
+    <!-- Button to increment Team B score by 6 -->
+
+    <!-- Button to increment Team B score by 4 -->
+
+    <!-- Button to increment Team B score by 1 -->
+
+    <!-- Button to increment Team B wickets -->
+
+    <Button
+        android:id="@+id/teamBFourButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teamARunButton"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="158dp"
+        android:layout_toEndOf="@id/teamBSixButton"
+        android:text="Team B +4" />
+
+    <Button
+        android:id="@+id/teamBSixButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teamARunButton"
+        android:layout_marginTop="158dp"
+        android:text="Team B +6" />
+
+    <Button
+        android:id="@+id/teamBRunButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teamBSixButton"
         android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true" />
+        android:text="Team B +1" />
+
+    <Button
+        android:id="@+id/teamBWicketButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teamBSixButton"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/teamBRunButton"
+        android:text="Team B Wicket" />
 
 </RelativeLayout>

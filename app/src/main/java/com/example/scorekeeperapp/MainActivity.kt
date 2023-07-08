@@ -1,5 +1,6 @@
 package com.example.scorekeeperapp
 
+
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -7,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+    // Variables to track scores, wickets, balls, and overs
     private var teamAScore = 0
     private var teamAWickets = 0
     private var teamBScore = 0
@@ -14,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private var ballsThrown = 0
     private var overs = 0
 
+    // TextViews to display scores and overs
     private lateinit var teamAScoreTextView: TextView
     private lateinit var teamBScoreTextView: TextView
     private lateinit var oversTextView: TextView
@@ -22,10 +25,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Initialize TextViews
         teamAScoreTextView = findViewById(R.id.teamAScore)
         teamBScoreTextView = findViewById(R.id.teamBScore)
         oversTextView = findViewById(R.id.oversTextView)
 
+        // Set click listeners for Team A buttons
         val teamASixButton: Button = findViewById(R.id.teamASixButton)
         teamASixButton.setOnClickListener { updateScore("A", 6) }
 
@@ -38,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         val teamAWicketButton: Button = findViewById(R.id.teamAWicketButton)
         teamAWicketButton.setOnClickListener { updateWicket("A") }
 
+        // Set click listeners for Team B buttons
         val teamBSixButton: Button = findViewById(R.id.teamBSixButton)
         teamBSixButton.setOnClickListener { updateScore("B", 6) }
 
@@ -51,6 +57,7 @@ class MainActivity : AppCompatActivity() {
         teamBWicketButton.setOnClickListener { updateWicket("B") }
     }
 
+    // Function to update the score and handle overs
     private fun updateScore(team: String, runs: Int) {
         if (team == "A") {
             teamAScore += runs
@@ -68,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Function to update wickets and handle overs
     private fun updateWicket(team: String) {
         if (team == "A") {
             teamAWickets++
