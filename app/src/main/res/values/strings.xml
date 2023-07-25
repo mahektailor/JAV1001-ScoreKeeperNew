@@ -7,4 +7,7 @@
     <string name="wicket">Wicket</string>
     <string name="team_b_0_0">Team B: 0/0</string>
     <string name="overs_0">Overs: 0</string>
+    <string name="team_a_1">Team A +1</string>
+    <string name="CricketScoreKeeper">Cricket Score Keeper </string>
+    <string name="topAppBar">Criket Score Keeper</string>
 </resources>
