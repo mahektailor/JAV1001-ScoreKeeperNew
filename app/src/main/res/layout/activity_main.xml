@@ -24,9 +24,9 @@
         app:menu="@menu/top_app_bar"
         app:navigationIcon="@android:drawable/arrow_down_float"
         app:title="The Cricket Score Keeper"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="2dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="2dp" />
 
     <TextView
         android:id="@+id/teamBScore"
@@ -58,7 +58,9 @@
         android:layout_marginTop="124dp"
         android:text="Team A +6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/oversTextView" />
+        app:layout_constraintTop_toBottomOf="@id/oversTextView"
+
+        />
 
     <Button
         android:id="@+id/teamARunButton"
@@ -94,11 +96,12 @@
         android:id="@+id/teamBFourButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="@color/BlueDarkButton"
         android:text="Team B +4"
-        app:layout_constraintStart_toEndOf="@id/teamBSixButton"
-        app:layout_constraintTop_toBottomOf="@id/teamARunButton" />
+        app:layout_constraintBottom_toTopOf="@+id/teamBWicketButton"
+        app:layout_constraintStart_toEndOf="@+id/teamBSixButton" />
 
     <Button
         android:id="@+id/teamBWicketButton"
@@ -106,6 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
+        android:backgroundTint="@color/BlueDarkButton"
         android:text="Team B Wicket"
         app:layout_constraintStart_toEndOf="@id/teamBRunButton"
         app:layout_constraintTop_toBottomOf="@id/teamBSixButton" />
@@ -116,6 +120,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
+        android:backgroundTint="@color/BlueDarkButton"
         android:text="Team B +6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/teamARunButton" />
@@ -127,6 +132,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="48dp"
         android:text="Team B +1"
+        android:backgroundTint="@color/BlueDarkButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/teamBSixButton" />
 
@@ -140,7 +146,6 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/teamBScore" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

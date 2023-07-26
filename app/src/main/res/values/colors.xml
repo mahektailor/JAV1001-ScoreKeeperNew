@@ -4,5 +4,5 @@
     <color name="my_color_primary_dark">#E91E63</color>
     <color name="my_color_accent">#FFC107</color>
     <color name="my_text_color_primary">#FFFFFF</color>
-
+    <color name="BlueDarkButton">#002481</color>
 </resources>
