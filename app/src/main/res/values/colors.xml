@@ -5,4 +5,5 @@
     <color name="my_color_accent">#FFC107</color>
     <color name="my_text_color_primary">#FFFFFF</color>
     <color name="BlueDarkButton">#002481</color>
+    <color name="light_yellow">#FFFFE0</color>
 </resources>
