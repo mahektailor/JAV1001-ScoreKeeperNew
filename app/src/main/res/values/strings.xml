@@ -10,4 +10,5 @@
     <string name="team_a_1">Team A +1</string>
     <string name="CricketScoreKeeper">Cricket Score Keeper </string>
     <string name="topAppBar">Criket Score Keeper</string>
+    <string name="about">About</string>
 </resources>

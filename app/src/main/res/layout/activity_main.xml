@@ -14,7 +14,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+         />
 
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -25,7 +25,7 @@
         app:menu="@menu/top_app_bar"
         app:navigationIcon="@android:drawable/arrow_down_float"
         app:title="The Cricket Score Keeper"
-        tools:ignore="MissingConstraints"
+
         tools:layout_editor_absoluteX="4dp"
         tools:layout_editor_absoluteY="2dp" />
 
