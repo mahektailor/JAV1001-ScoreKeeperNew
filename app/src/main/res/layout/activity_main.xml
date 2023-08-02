@@ -12,9 +12,11 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-         />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -35,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="36dp"
-        android:text="Team B: 0"
+        android:text="@string/team_b_0"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/teamAScore" />
@@ -46,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="92dp"
-        android:text="Team A: 0"
+        android:text="@string/team_a_0"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -57,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="124dp"
-        android:text="Team A +6"
+        android:text="@string/team_a_6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/oversTextView"
 
@@ -69,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
-        android:text="Team A +1"
+        android:text="@string/team_a_11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/teamASixButton" />
 
@@ -79,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginTop="124dp"
-        android:text="Team A +4"
+        android:text="@string/team_a_4"
         app:layout_constraintStart_toEndOf="@id/teamASixButton"
         app:layout_constraintTop_toBottomOf="@id/oversTextView" />
 
@@ -89,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="32dp"
-        android:text="Team A Wicket"
+        android:text="@string/team_a_wicket"
         app:layout_constraintStart_toEndOf="@id/teamARunButton"
         app:layout_constraintTop_toBottomOf="@id/teamASixButton" />
 
@@ -100,7 +102,7 @@
         android:layout_marginStart="76dp"
         android:layout_marginBottom="48dp"
         android:backgroundTint="@color/BlueDarkButton"
-        android:text="Team B +4"
+        android:text="@string/team_b_4"
         app:layout_constraintBottom_toTopOf="@+id/teamBWicketButton"
         app:layout_constraintStart_toEndOf="@+id/teamBSixButton" />
 
@@ -111,7 +113,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
         android:backgroundTint="@color/BlueDarkButton"
-        android:text="Team B Wicket"
+        android:text="@string/team_b_wicket"
         app:layout_constraintStart_toEndOf="@id/teamBRunButton"
         app:layout_constraintTop_toBottomOf="@id/teamBSixButton" />
 
@@ -122,7 +124,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/BlueDarkButton"
-        android:text="Team B +6"
+        android:text="@string/team_b_6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/teamARunButton" />
 
@@ -132,7 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="48dp"
-        android:text="Team B +1"
+        android:text="@string/team_b_1"
         android:backgroundTint="@color/BlueDarkButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/teamBSixButton" />
@@ -143,7 +145,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
-        android:text="Overs: 0"
+        android:text="@string/overs_00"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/teamBScore" />

@@ -11,4 +11,15 @@
     <string name="CricketScoreKeeper">Cricket Score Keeper </string>
     <string name="topAppBar">Criket Score Keeper</string>
     <string name="about">About</string>
+    <string name="team_b_0">Team B: 0</string>
+    <string name="team_a_0">Team A: 0</string>
+    <string name="team_a_6">Team A +6</string>
+    <string name="team_a_11">Team A +1</string>
+    <string name="team_a_4">Team A +4</string>
+    <string name="team_a_wicket">Team A Wicket</string>
+    <string name="team_b_4">Team B +4</string>
+    <string name="team_b_wicket">Team B Wicket</string>
+    <string name="team_b_1">Team B +1</string>
+    <string name="team_b_6">Team B +6</string>
+    <string name="overs_00">Overs: 0</string>
 </resources>
