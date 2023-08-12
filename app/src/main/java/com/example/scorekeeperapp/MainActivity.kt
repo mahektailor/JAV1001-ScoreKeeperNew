@@ -1,11 +1,13 @@
 package com.example.scorekeeperapp
 
-
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
 class MainActivity : AppCompatActivity() {
     // Variables to track scores, wickets, balls, and overs
@@ -23,8 +25,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
+
+        // Initialize the custom Toolbar
+        val toolbar: Toolbar = findViewById(R.id.topAppBar)
+        setSupportActionBar(toolbar)
 
         // Initialize TextViews
         teamAScoreTextView = findViewById(R.id.teamAScore)
@@ -32,33 +37,40 @@ class MainActivity : AppCompatActivity() {
         oversTextView = findViewById(R.id.oversTextView)
 
         // Set click listeners for Team A buttons
-        val teamASixButton: Button = findViewById(R.id.teamASixButton)
-        teamASixButton.setOnClickListener { updateScore("A", 6) }
-
-        val teamAFourButton: Button = findViewById(R.id.teamAFourButton)
-        teamAFourButton.setOnClickListener { updateScore("A", 4) }
-
-        val teamARunButton: Button = findViewById(R.id.teamARunButton)
-        teamARunButton.setOnClickListener { updateScore("A", 1) }
-
-        val teamAWicketButton: Button = findViewById(R.id.teamAWicketButton)
-        teamAWicketButton.setOnClickListener { updateWicket("A") }
+        findViewById<Button>(R.id.teamASixButton).setOnClickListener { updateScore("A", 6) }
+        findViewById<Button>(R.id.teamAFourButton).setOnClickListener { updateScore("A", 4) }
+        findViewById<Button>(R.id.teamARunButton).setOnClickListener { updateScore("A", 1) }
+        findViewById<Button>(R.id.teamAWicketButton).setOnClickListener { updateWicket("A") }
 
         // Set click listeners for Team B buttons
-        val teamBSixButton: Button = findViewById(R.id.teamBSixButton)
-        teamBSixButton.setOnClickListener { updateScore("B", 6) }
-
-        val teamBFourButton: Button = findViewById(R.id.teamBFourButton)
-        teamBFourButton.setOnClickListener { updateScore("B", 4) }
-
-        val teamBRunButton: Button = findViewById(R.id.teamBRunButton)
-        teamBRunButton.setOnClickListener { updateScore("B", 1) }
-
-        val teamBWicketButton: Button = findViewById(R.id.teamBWicketButton)
-        teamBWicketButton.setOnClickListener { updateWicket("B") }
+        findViewById<Button>(R.id.teamBSixButton).setOnClickListener { updateScore("B", 6) }
+        findViewById<Button>(R.id.teamBFourButton).setOnClickListener { updateScore("B", 4) }
+        findViewById<Button>(R.id.teamBRunButton).setOnClickListener { updateScore("B", 1) }
+        findViewById<Button>(R.id.teamBWicketButton).setOnClickListener { updateWicket("B") }
     }
 
-    // Function to update the score and handle overs
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.top_app_bar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_about -> {
+                // Handle About item click
+                true
+            }
+            R.id.action_settings -> {
+                // Launch the SettingsActivity
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+
     private fun updateScore(team: String, runs: Int) {
         if (team == "A") {
             teamAScore += runs
@@ -76,7 +88,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Function to update wickets and handle overs
     private fun updateWicket(team: String) {
         if (team == "A") {
             teamAWickets++
