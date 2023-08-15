@@ -1,4 +1,3 @@
-
 package com.example.scorekeeperapp
 
 import android.os.Bundle
@@ -13,6 +12,12 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        val backButton = findViewById<Button>(R.id.backbuttonNew)
+        backButton.setOnClickListener {
+            onBackPressed()
+        }
     }
 }
-
