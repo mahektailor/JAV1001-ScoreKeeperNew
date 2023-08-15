@@ -8,9 +8,10 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    // Variables to track scores, wickets, balls, and overs
+
     private var teamAScore = 0
     private var teamAWickets = 0
     private var teamBScore = 0
@@ -18,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private var ballsThrown = 0
     private var overs = 0
 
-    // TextViews to display scores and overs
     private lateinit var teamAScoreTextView: TextView
     private lateinit var teamBScoreTextView: TextView
     private lateinit var oversTextView: TextView
@@ -27,26 +27,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Initialize the custom Toolbar
         val toolbar: Toolbar = findViewById(R.id.topAppBar)
         setSupportActionBar(toolbar)
 
-        // Initialize TextViews
         teamAScoreTextView = findViewById(R.id.teamAScore)
         teamBScoreTextView = findViewById(R.id.teamBScore)
         oversTextView = findViewById(R.id.oversTextView)
 
-        // Set click listeners for Team A buttons
-        findViewById<Button>(R.id.teamASixButton).setOnClickListener { updateScore("A", 6) }
-        findViewById<Button>(R.id.teamAFourButton).setOnClickListener { updateScore("A", 4) }
-        findViewById<Button>(R.id.teamARunButton).setOnClickListener { updateScore("A", 1) }
-        findViewById<Button>(R.id.teamAWicketButton).setOnClickListener { updateWicket("A") }
+        findViewById<Button>(R.id.teamASixButton)?.setOnClickListener { updateScore("A", 6) }
+        findViewById<Button>(R.id.teamAFourButton)?.setOnClickListener { updateScore("A", 4) }
+        findViewById<Button>(R.id.teamARunButton)?.setOnClickListener { updateScore("A", 1) }
+        findViewById<Button>(R.id.teamAWicketButton)?.setOnClickListener { updateWicket("A") }
 
-        // Set click listeners for Team B buttons
-        findViewById<Button>(R.id.teamBSixButton).setOnClickListener { updateScore("B", 6) }
-        findViewById<Button>(R.id.teamBFourButton).setOnClickListener { updateScore("B", 4) }
-        findViewById<Button>(R.id.teamBRunButton).setOnClickListener { updateScore("B", 1) }
-        findViewById<Button>(R.id.teamBWicketButton).setOnClickListener { updateWicket("B") }
+        findViewById<Button>(R.id.teamBSixButton)?.setOnClickListener { updateScore("B", 6) }
+        findViewById<Button>(R.id.teamBFourButton)?.setOnClickListener { updateScore("B", 4) }
+        findViewById<Button>(R.id.teamBRunButton)?.setOnClickListener { updateScore("B", 1) }
+        findViewById<Button>(R.id.teamBWicketButton)?.setOnClickListener { updateWicket("B") }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -57,19 +53,28 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_about -> {
-                // Handle About item click
+                try {
+                    val intent = Intent(this, AboutActivity::class.java)
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    showToast(" Mahek A00279780 Mobile Application Development ")
+                }
                 true
             }
             R.id.action_settings -> {
-                // Launch the SettingsActivity
-                val intent = Intent(this, SettingsActivity::class.java)
-                startActivity(intent)
+                try {
+                    val intent = Intent(this, SettingsActivity::class.java)
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    showToast("Error opening SettingsActivity")
+                }
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 
     private fun updateScore(team: String, runs: Int) {
         if (team == "A") {
@@ -103,5 +108,9 @@ class MainActivity : AppCompatActivity() {
             overs++
             oversTextView.text = "Overs: $overs"
         }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
